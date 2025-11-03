@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:task_manager_project/ui/screens/sign_in_screen.dart';
+import 'package:task_manager_project/ui/utils/asset_paths.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -8,10 +11,34 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _moveToNextScreen();
+  }
+
+  Future<void> _moveToNextScreen() async {
+    await Future.delayed(Duration(seconds:3));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignInScreen()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-    );
+      body: Stack(
+          children: [
+            SvgPicture.asset(AssetPaths.backgroundSvg,
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover,
+            ),
+            Center(
+              child: SvgPicture.asset(AssetPaths.logoSvg,height: 320,width: 350,)
+              ),
+          ],
+        ),
+      );
   }
 }
