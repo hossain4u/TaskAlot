@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager_project/ui/screens/sign_in_screen.dart';
+import 'package:task_manager_project/ui/screens/sign_up_screen.dart';
 import 'package:task_manager_project/ui/screens/splash_screen.dart';
+
 
 class TaskAlotTaskManager extends StatelessWidget {
   const TaskAlotTaskManager({super.key});
@@ -48,7 +51,12 @@ class TaskAlotTaskManager extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      routes:<String, WidgetBuilder> {
+        SplashScreen.name:(_)=> SplashScreen(),
+        SignInScreen.name:(_)=> SignInScreen(),
+        SignUpScreen.name:(_)=> SignUpScreen(),
+      },
+      initialRoute:SplashScreen.name ,
     );
   }
 }
