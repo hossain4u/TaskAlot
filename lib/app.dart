@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager_project/ui/screens/forgot_password_email_screen.dart';
 import 'package:task_manager_project/ui/screens/sign_in_screen.dart';
 import 'package:task_manager_project/ui/screens/sign_up_screen.dart';
 import 'package:task_manager_project/ui/screens/splash_screen.dart';
-
 
 class TaskAlotTaskManager extends StatelessWidget {
   const TaskAlotTaskManager({super.key});
@@ -49,14 +49,21 @@ class TaskAlotTaskManager extends StatelessWidget {
             foregroundColor: Colors.white,
           ),
         ),
+        textTheme: TextTheme(
+          titleLarge: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+          labelMedium: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Colors.grey)
+
+        )
       ),
+
       debugShowCheckedModeBanner: false,
-      routes:<String, WidgetBuilder> {
-        SplashScreen.name:(_)=> SplashScreen(),
-        SignInScreen.name:(_)=> SignInScreen(),
-        SignUpScreen.name:(_)=> SignUpScreen(),
+      routes: <String, WidgetBuilder>{
+        SplashScreen.name: (_) => SplashScreen(),
+        SignInScreen.name: (_) => SignInScreen(),
+        SignUpScreen.name: (_) => SignUpScreen(),
+        ForgotPasswordEmailScreen.name:(_) => ForgotPasswordEmailScreen(),
       },
-      initialRoute:SplashScreen.name ,
+      initialRoute: SplashScreen.name,
     );
   }
 }
