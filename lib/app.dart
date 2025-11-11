@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager_project/ui/screens/forgot_password_email_screen.dart';
+import 'package:task_manager_project/ui/screens/forgot_password_otp_verify_screen.dart';
 import 'package:task_manager_project/ui/screens/sign_in_screen.dart';
 import 'package:task_manager_project/ui/screens/sign_up_screen.dart';
 import 'package:task_manager_project/ui/screens/splash_screen.dart';
@@ -62,6 +63,7 @@ class TaskAlotTaskManager extends StatelessWidget {
         SignInScreen.name: (_) => SignInScreen(),
         SignUpScreen.name: (_) => SignUpScreen(),
         ForgotPasswordEmailScreen.name:(_) => ForgotPasswordEmailScreen(),
+        ForgotPasswordOtpVerifyScreen.name :(_) => ForgotPasswordOtpVerifyScreen()
       },
       initialRoute: SplashScreen.name,
     );

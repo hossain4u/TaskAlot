@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:task_manager_project/ui/screens/forgot_password_otp_verify_screen.dart';
 import 'package:task_manager_project/ui/widgets/screen_background.dart';
 
 class ForgotPasswordEmailScreen extends StatefulWidget {
@@ -78,6 +79,7 @@ class _ForgotPasswordEmailScreenState extends State<ForgotPasswordEmailScreen> {
     Navigator.pop(context);
   }
   void _onTapSubmitButton() {
+    Navigator.pushNamed(context, ForgotPasswordOtpVerifyScreen.name);
 
   }
 }
