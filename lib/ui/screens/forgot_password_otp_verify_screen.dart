@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:task_manager_project/ui/screens/reset_password_screen.dart';
 import 'package:task_manager_project/ui/screens/sign_in_screen.dart';
 import 'package:task_manager_project/ui/widgets/screen_background.dart';
 
@@ -104,5 +105,7 @@ class _ForgotPasswordOtpVerifyScreenState
     Navigator.pushNamedAndRemoveUntil(context, SignInScreen.name, (predicate)=> false);
   }
 
-  void _onTapSubmitButton() {}
+  void _onTapSubmitButton() {
+    Navigator.pushNamed(context, ResetPasswordScreen.name);
+  }
 }
